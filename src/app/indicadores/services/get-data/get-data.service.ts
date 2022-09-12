@@ -14,7 +14,6 @@ export class IndicadoresService {
 
   baseUrl: string = 'https://api.sbif.cl/api-sbifv3/recursos_api';
 
-  test = 'dolar/posteriores/2022/08/dias/30?apikey=7d08d2763a62e2a43c4e3c91ecdaf29f7ba45fe4&formato=json'
   utm = 'utm/posteriores/2022/02?apikey=7d08d2763a62e2a43c4e3c91ecdaf29f7ba45fe4&formato=json'
 
   constructor( private http : HttpClient) { }

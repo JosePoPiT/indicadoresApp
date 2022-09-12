@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Currency, CurrencyData } from '../../interfaces/currency.interface';
+import { Currency } from '../../interfaces/currency.interface';
 
 import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IndicadoresService } from '../../services/get-data/get-data.service';
 import { switchMap } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { ErrorDetails } from '../../interfaces/error.interface';
 import { ErrorService } from '../../services/error/error.service';
 
@@ -41,7 +41,7 @@ export class GraphicPageComponent implements OnInit {
     labels: []
   };
 
-  // public lineChartOptions: ChartConfiguration['options'] = {
+ 
   public lineChartOptions: ChartConfiguration['options'] = {
     elements: {
       line: {
@@ -49,7 +49,7 @@ export class GraphicPageComponent implements OnInit {
       }
     },
     scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
+      
       x: {},
       'y-axis-0':
         {
