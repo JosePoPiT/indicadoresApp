@@ -1,27 +1,29 @@
-# IndicadoresApp
+# Listar Indicadores App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Este proyecto fue genrado por  [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## Development server
+## Descripción del proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+En esta App se utilizaron varias herramientas que nos proporciona angular para su mejor funcionamiento:
 
-## Code scaffolding
+- Se utilizo libreria ng2-charts para mostrar las graficas segun el indicador.
+- Esta App es responsive para cualquier tipo de dispositivo.
+- Se uso Scss para los estilos.
+- Se hizo uso de la librería Angular Material para el diseño.
+- Rutas para la comunicación entre componentes.
+- Se consumieron API's de api.cmfchile.cl para desplegar informacion requerida segun indicador solicitado.
+- Inyección de servicios para utilizar la informacion de respuesta de la API.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalacion de paquetes de librería
 
-## Running unit tests
+Se ejectua npm install desde la terminal para instalar todas las dependencias.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Ejecución del proyecto
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`ng serve` para ejecutarlo.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
