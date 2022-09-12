@@ -18,7 +18,7 @@ En esta App se utilizaron varias herramientas que nos proporciona angular para s
 
 ## Instalación de paquetes de librería
 
-Se ejecuta npm install desde la terminal para instalar todas las dependencias.
+Luego de clonar el proyecto, ejecutar el comando `npm install` desde la terminal para instalar todas las dependencias.
 
 ## Ejecución del proyecto
 
