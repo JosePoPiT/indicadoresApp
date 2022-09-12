@@ -1,0 +1,34 @@
+:host {
+    width: 70%;
+}
+.currentPrice-title {
+    display: flex;
+    justify-content: center;
+    color: #11ab11;
+    font-weight: 600;
+    font-size: 32px;
+    margin-top: 32px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & mat-card {
+        max-width: 360px;
+        margin-bottom: 24px;
+
+        & .mat-card-content {
+            display: flex;
+            gap: 16px;
+    
+            & span {
+                width: 120px;
+            }
+    
+        }
+    }
+}
+
+

@@ -1,0 +1,41 @@
+
+<ng-container *ngIf="!isLoadingContent">
+    <h3 class="currentPrice-title"> $ {{CurrencyData.Valor | number}}</h3>
+    
+    <div class="container">
+        <mat-card>
+            <div class="mat-card-content">
+                <span>Cantidad</span>
+                <span>1 {{currencyName | titlecase}}</span>
+            </div>
+
+            <div class="mat-card-content">
+                <span>Fecha</span>
+                <span>{{CurrencyData.Fecha}}</span>
+            </div>
+
+            <div class="mat-card-content">
+                <span>Unidad de Medida</span>
+                <span>Pesos</span>
+            </div>
+        </mat-card>
+
+        <canvas baseChart width="400" height="400"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        [type]="lineChartType"></canvas>
+    
+    
+    </div>
+
+</ng-container>
+
+<mat-grid-list cols="1" *ngIf="isLoadingContent">
+    <mat-grid-tile>
+        <mat-spinner>
+        </mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+

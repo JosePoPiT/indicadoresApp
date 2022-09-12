@@ -1,0 +1,29 @@
+<mat-toolbar>
+    <span>My Application</span>
+    <mat-slide-toggle [formControl]="themeControl">{{themeControl.value ? 'Tema Oscuro' : 'Tema Claro'}}</mat-slide-toggle> 
+</mat-toolbar>
+
+
+<div class="indicators-content">
+    <div class="list-container">
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let indicator of indicators">
+                <div class="list-item-box">
+                    <h3>{{indicator.name}}</h3>
+                    <mat-radio-button (change)="showIndicatorsDetail(indicator.id, 'detail')" >Ver Historial</mat-radio-button>
+                    <mat-radio-button (change)="showIndicatorsDetail(indicator.id, 'graphic')">Ver Gráfica</mat-radio-button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    
+    <div class="info-container">
+        <div class="info-container__image" *ngIf="!hasSelectedIndicator; else infoContainer;">
+            <img src="assets/charts.svg" alt="Indicadores Financieros Imagen">
+        </div>
+        <ng-template #infoContainer>
+            <router-outlet></router-outlet>
+        </ng-template>
+    </div>
+</div>
+

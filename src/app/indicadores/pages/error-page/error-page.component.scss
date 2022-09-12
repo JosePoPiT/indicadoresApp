@@ -1,0 +1,28 @@
+.error-page {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    gap: 4%;
+
+    &__text {
+        width: 48%;
+
+        & h3 {
+            color: red;
+            font-weight: 700;
+        }
+    }
+
+    &__image {
+        width: 48%;
+        & img {
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+
+    .light-text {
+        font-weight: 300;
+    }
+}
