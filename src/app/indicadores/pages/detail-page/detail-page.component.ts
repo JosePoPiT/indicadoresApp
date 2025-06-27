@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { ActivatedRoute } from '@angular/router';
 import { IndicadoresService } from '../../services/get-data/get-data.service';
@@ -33,12 +33,20 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
 
   pageSize: number = 5;
 
+  isLoadingContent = false;
+  @Output() loadingChange = new EventEmitter<boolean>();
+  data: Currency[] = [];
 
-  constructor(private activateRoute : ActivatedRoute,
-              private indicadoresService : IndicadoresService) { }
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private indicadoresService: IndicadoresService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-
+    this.activateRoute.params.subscribe(params => {
+      this.loadData(params['id']);
+    });
   }
 
   ngAfterViewInit(): void {
@@ -66,5 +74,22 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
       });
   }
 
+  loadData(id: string) {
+    this.isLoadingContent = true;
+    this.loadingChange.emit(true);
+    this.indicadoresService.getCurrencyData(id, 'day').subscribe({
+      next: (data: Currency[]) => {
+        this.data = data;
+        this.isLoadingContent = false;
+        this.cdr.detectChanges();
+        this.loadingChange.emit(false);
+      },
+      error: () => {
+        this.isLoadingContent = false;
+        this.cdr.detectChanges();
+        this.loadingChange.emit(false);
+      }
+    });
+  }
 
 }

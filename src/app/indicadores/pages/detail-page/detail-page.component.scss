@@ -5,5 +5,37 @@
 
 table,
 mat-paginator {
-    width: 80%;
+    width: 100%;
+}
+
+:host-context(.dark-theme) .mat-table,
+:host-context(.dark-theme) .mat-row,
+:host-context(.dark-theme) .mat-header-row,
+:host-context(.dark-theme) .mat-cell,
+:host-context(.dark-theme) .mat-header-cell {
+  background: #232323 !important;
+  color: #f1f1f1 !important;
+  border-color: #444 !important;
+}
+
+:host-context(.dark-theme) .mat-paginator,
+:host-context(.dark-theme) .mat-paginator-container {
+  background: #232323 !important;
+  color: #f1f1f1 !important;
+}
+
+:host-context(.light-theme) .mat-table,
+:host-context(.light-theme) .mat-row,
+:host-context(.light-theme) .mat-header-row,
+:host-context(.light-theme) .mat-cell,
+:host-context(.light-theme) .mat-header-cell {
+  background: #fff !important;
+  color: #222 !important;
+  border-color: #e0e0e0 !important;
+}
+
+:host-context(.light-theme) .mat-paginator,
+:host-context(.light-theme) .mat-paginator-container {
+  background: #fff !important;
+  color: #222 !important;
 }

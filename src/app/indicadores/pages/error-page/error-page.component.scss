@@ -26,3 +26,9 @@
         font-weight: 300;
     }
 }
+
+@media (max-width: 600px) {
+    .error-page {
+        flex-direction: column;
+    }
+}

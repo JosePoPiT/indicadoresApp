@@ -1,3 +1,39 @@
+<div class="container">
+  <header class="header">
+    <div class="header-content">
+      <h1>Bienvenido a Indicadores Financieros</h1>
+      <p class="subtitle">Consulta y visualiza los principales indicadores económicos de forma sencilla.<br>
+        Haz clic en "Comenzar" para ver los indicadores disponibles.</p>
+    </div>
+  </header>
 
-<router-outlet></router-outlet>
-
+  <div class="welcome-container">
+    <div class="welcome-content">
+      <h1>Bienvenido a <span class="brand">Indicadores Financieros</span></h1>
+      <p class="subtitle">Consulta y visualiza los principales indicadores económicos de forma sencilla.<br>
+        Haz clic en <b>Comenzar</b> para ver los indicadores disponibles.</p>
+      <button mat-raised-button color="primary" class="start-btn" (click)="goToMain()">Comenzar</button>
+      <div class="welcome-animation">
+        <!-- Animación SVG dinámica original -->
+        <svg width="320" height="120" viewBox="0 0 320 120">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <polyline fill="none" stroke="url(#grad1)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+            points="10,100 60,40 110,80 160,20 210,60 260,30 310,90">
+            <animate attributeName="points" dur="2s" repeatCount="indefinite" values="10,100 60,40 110,80 160,20 210,60 260,30 310,90;
+                    10,90 60,60 110,40 160,80 210,30 260,60 310,100;
+                    10,100 60,40 110,80 160,20 210,60 260,30 310,90" />
+          </polyline>
+          <circle r="7" fill="#1976d2">
+            <animate attributeName="cx" values="10;60;110;160;210;260;310;10" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="100;40;80;20;60;30;90;100" dur="2s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

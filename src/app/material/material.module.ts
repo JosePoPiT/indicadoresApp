@@ -8,9 +8,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
-
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
  exports : [
@@ -22,7 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   MatSidenavModule,
   MatTableModule,
   MatToolbarModule,
-  
+  MatSlideToggleModule,
  ]
 })
 export class MaterialModule { }

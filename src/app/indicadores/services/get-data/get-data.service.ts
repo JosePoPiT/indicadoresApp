@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Currency, CurrencyData } from '../../interfaces/currency.interface';
 import { Observable } from 'rxjs'
 import { DateSelected } from '../../interfaces/date.interface';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -43,17 +43,26 @@ export class IndicadoresService {
   // INDICADORES GRAPHICS
 
   public getCurrencyData(id: string, action: 'day' | 'month', daysBehind = 10): Observable<Currency[]> {
+    console.log('Servicio getCurrencyData llamado con:', { id, action, daysBehind });
     // return this.http.get<CurrencyData>(`${this.baseUrlCurrentCurrency}/${id}?apikey=${this.apiKey}&formato=json`);
     const dynamicDate = this.getDynamicDate(action, daysBehind);
     const dynamicUrl = this.getDynamicUrl(action, dynamicDate);
-    return this.http.get<CurrencyData>(`${this.baseUrl}/${id}/periodo/${dynamicUrl}/?apikey=${this.apiKey}&formato=json`)
+    const fullUrl = `${this.baseUrl}/${id}/periodo/${dynamicUrl}/?apikey=${this.apiKey}&formato=json`;
+    console.log('URL completa:', fullUrl);
+    
+    return this.http.get<CurrencyData>(fullUrl)
       .pipe(
+        tap((response) => {
+          console.log('Respuesta del API:', response);
+        }),
         map((currency: CurrencyData) => {
+          console.log('Procesando datos de currency:', currency);
           const currencyArr: Currency[] = Object.values(currency)[0].map((currencyResp) => {
             currencyResp.Valor = (currencyResp.Valor as string).replace('.', '');
             currencyResp.Valor = Number((currencyResp.Valor as string).replace(',', '.'));
             return currencyResp;
           });
+          console.log('Datos procesados:', currencyArr);
           return currencyArr;
         })
       )

@@ -10,39 +10,40 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 const routes : Routes = [
   {
     path: 'indicadores',
-    component : HomePageComponent,
-    children :  [
+    children: [
       {
-        path : 'main',
-        component : MainPageComponent,
+        path: '',
+        component: HomePageComponent
+      },
+      {
+        path: 'main',
+        component: MainPageComponent,
         children: [
           {
             path: 'detail/:id',
-            component : DetailPageComponent,
+            component: DetailPageComponent,
           },
           {
             path: 'graphic/:id',
-            component : GraphicPageComponent,
+            component: GraphicPageComponent,
           },
           {
             path: 'error',
-            component : ErrorPageComponent,
+            component: ErrorPageComponent,
           },
         ]
       },
       {
         path: '**',
-        redirectTo : 'main'
+        redirectTo: ''
       }
-    ],
+    ]
   },
   {
     path: '**',
-    redirectTo : 'indicadores'
+    redirectTo: 'indicadores'
   }
 ]
-
-
 
 @NgModule({
   declarations: [],

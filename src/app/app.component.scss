@@ -1,0 +1,33 @@
+.main-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.2rem;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.dark-theme {
+  background: #181818;
+  color: #f1f1f1;
+}
+.light-theme {
+  background: #fafafa;
+  color: #222;
+}
+
+@media (max-width: 600px) {
+  .main-toolbar {
+    font-size: 0.95rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .main-toolbar span {
+    font-size: 0.95rem;
+  }
+}
